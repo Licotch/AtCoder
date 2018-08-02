@@ -1,3 +1,9 @@
+;;;; B - インタラクティブ練習（Interactive Sorting）
+;;;; https://beta.atcoder.jp/contests/practice/tasks/practice_2
+
+;;;;   Time: 35ms
+;;;; Memory: 8884KB
+
 (defun get-question ()
   (list (read) (read)))
 

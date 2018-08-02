@@ -1,6 +1,10 @@
-(defun sumn (num)
-  (if (zerop num)
-      0
-      (+ (read) (sumn (1- num)))))
+;;;; PracticeA - はじめてのあっとこーだー（Welcome to AtCoder）
+;;;; https://beta.atcoder.jp/contests/practice/tasks/practice_1
 
-(format t "~A ~A~%" (sumn 3) (read-line))
+;;;;   Time: 5ms
+;;;; Memory: 2788KB
+
+(format t
+        "~A ~A~%"
+        (apply #'+ `(,(read) ,(read) ,(read)))
+        (read-line))
