@@ -1,8 +1,8 @@
 ;;;; D - Equal Cut
 ;;;; https://beta.atcoder.jp/contests/abc102/tasks/arc100_b
 
-;;;;   Time:
-;;;; Memory:
+;;;;   Time: 609ms
+;;;; Memory: 61800KB
 
 (defun get-max (data start end)
   (if (zerop start)
