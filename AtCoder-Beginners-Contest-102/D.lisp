@@ -4,15 +4,15 @@
 ;;;;   Time: 609ms
 ;;;; Memory: 61800KB
 
-(defun get-max (data start end)
+(defun get-sum (data start end)
   (if (zerop start)
       (aref data (1- end))
       (- (aref data (1- end))
          (aref data (1- start)))))
 
 (defun get-diff (data start-point second-point end-point)
-  (abs (- (get-max data second-point end-point)
-          (get-max data start-point second-point))))
+  (abs (- (get-sum data second-point end-point)
+          (get-sum data start-point second-point))))
 
 (defun equal-cut ()
   (let* ((n (read))
@@ -35,11 +35,11 @@
                                (get-diff data second-separator third-separator n)))
                        (incf third-separator)
                        (return)))
-             (let* ((max-list (list (get-max data 0 first-separator)
-                                    (get-max data first-separator second-separator)
-                                    (get-max data second-separator third-separator)
-                                    (get-max data third-separator n)))
-                    (diff (- (apply #'max max-list) (apply #'min max-list))))
+             (let* ((sum-list (list (get-sum data 0 first-separator)
+                                    (get-sum data first-separator second-separator)
+                                    (get-sum data second-separator third-separator)
+                                    (get-sum data third-separator n)))
+                    (diff (- (apply #'max sum-list) (apply #'min sum-list))))
                (if (< diff minimized-diff)
                    (setq minimized-diff diff)))
           finally (princ minimized-diff))))
