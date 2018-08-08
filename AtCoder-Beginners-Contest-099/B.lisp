@@ -3,4 +3,4 @@
 
 (let ((a (read))
       (b (read)))
-  (princ (- (/ (* (- b a) (- b a -1)) 2) b)))
+  (princ (- (* (- b a) (- b a -1) 1/2) b)))
