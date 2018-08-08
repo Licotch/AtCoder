@@ -3,4 +3,4 @@
 
 (let ((a (read))
       (b (read)))
-  (princ (- (loop for i from 1 upto (- b a) sum i) b)))
+  (princ (- (/ (* (- b a) (- b a -1)) 2) b)))
